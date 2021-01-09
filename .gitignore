@@ -1,0 +1,4 @@
+/server/build
+**/node_modules
+/demo_test/yarn.lock
+/server/yarn.lock

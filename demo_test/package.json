@@ -1,0 +1,16 @@
+{
+  "name": "demo_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "run": "node index.js",
+    "play": "node PlaywrightChartink.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.7.1"
+  },
+  "dependencies": {
+    "numeral": "^2.0.6"
+  }
+}
