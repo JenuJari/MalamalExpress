@@ -1,10 +1,12 @@
 const { chromium } = require('playwright');
 const num = require('numeral');
 
+const { sleep } = require('./helpers');
+
 const parseChartinkCopyString = (str) => {
   const responseArr = [];
   const resp = str.split("\n");
-  const header = resp[2].replace("\r","");
+  const header = resp[2].replace("\r", "");
 
   const headerCols = header.split("\t");
   const chunks = resp.slice(3, resp.length);
@@ -56,23 +58,7 @@ const visitAndGetCopyFromChartinkUrl = async (url) => {
   return text;
 };
 
-const sleep = (ms) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-(async () => {
-  const resp = await visitAndGetCopyFromChartinkUrl('https://chartink.com/screener/tempo-test');
-  const parsedObj = parseChartinkCopyString(resp);
-  console.log("🚀 ~ file: index.js ~ line 68 ~ parsedObj", parsedObj)
-})();
-
-
-// const { chromium } = require('playwright-core');
-// const awsChromium = require('chrome-aws-lambda');
-
-// const browser = await chromium.launch({
-//   headless: false,
-//   executablePath: awsChromium.executablePath,
-// });
+module.exports = {
+  visitAndGetCopyFromChartinkUrl,
+  parseChartinkCopyString
+};

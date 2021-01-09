@@ -7,6 +7,7 @@ const apiRespFn = require("./utils/apiResponseFormat");
 const dbConn = require("./db/index");
 const getUserFromToken = require("./repo/auth").getUserFromToken;
 
+const scrapperRouter = require('./routes/scrapper');
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 const webRoot = require('./routes/webRoot');
@@ -38,6 +39,7 @@ app.use('/apis', async (req, res, next) => {
 
 app.use('/', webRoot);
 app.use('/api/auth', authRouter);
+app.use('/api/scrap', scrapperRouter);
 app.use('/apis/user', userRouter);
 
 app.use(function (_, __, next) {

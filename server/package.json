@@ -16,6 +16,8 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "nodemon": "^2.0.7",
+    "numeral": "^2.0.6",
+    "playwright": "^1.7.1",
     "sequelize": "^6.3.5",
     "sqlite3": "^4.2.0"
   }
